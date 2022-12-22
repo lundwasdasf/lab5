@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class = "Menu">
+            <div class = "Sub-menu">
+                <label class = "label">Название:</label>
+                <input class = "" id = "NameAbs">
+            </div>
+            <div class = "Sub-menu">
+                <label class = "label">Имя первого параметра:</label>
+                <input class = "" id = "TypeAbs">
+            </div>
+            <div class = "Sub-menu">
+                <label class = "label">Значения первого параметра:</label>
+                <input class = "" id = "TypeAbsZ">
+            </div>
+            <div class = "Sub-menu">
+                <label class = "label">Имя второго параметра:</label>
+                <input class = "" id = "TypeAbs2">
+            </div>
+            <div class = "Sub-menu">
+                <label class = "label">Значения второго параметра:</label>
+                <input class = "" id = "TypeAbs2Z">
+            </div>
+            <div class = "Button">
+                <button onclick= Print()>Выполнить</button>
+            </div>
+        </div>
+        <label class = "Res">Результат:</label>
+        <div class = "Result" id = "Result3">
+            <!-- <div class = 'Sub-result' id = 'Sub-result'> 
+                <label>Номер:</label><a id = 'Number2' > </a> 
+                <label>Название:</label><a id = 'NameA'></a>,                 Пример как выглядит код который выводиться динамически
+                <label id = 'TypeName'></label>:<a id = 'TypeA'></a>,
+                <label id = 'TypeName2'></label>:<a id = 'TypeB'></a> 
+            </div> -->
+        </div>
+        <script language="JavaScript">
+            var Name,Type,Num,Result,TypeZ,Type2,Type2Z;
+            var i = 1;
+            function NameAbs()
+
+        {
+                Name = document.getElementById('NameAbs').value;
+                Type = document.getElementById('TypeAbs').value;
+                TypeZ = document.getElementById('TypeAbsZ').value;
+                Type2 = document.getElementById('TypeAbs2').value;
+                Type2Z = document.getElementById('TypeAbs2Z').value;
+
+                var ArrayDiv = new Array();
+                for(i;i < 1000;)
+                {
+                    
+                    if(i==1){ArrayDiv[i] = (document.querySelector('.Result').innerHTML += "<div class = 'Sub-result' id = 'Sub-result'> <label>Номер:</label><a id = 'Number2' > </a> <label>Название:</label><a id = 'NameA'></a>,<label id = 'TypeName'></label>:<a id = 'TypeA'></a>,<label id = 'TypeName2'></label>:<a id = 'TypeB'></a> </div>")}
+                   else{
+                    
+                    ArrayDiv[i] = (document.querySelector('.Result').innerHTML += "<div class = 'Sub-result' id = 'Sub-result'> <label>Номер:</label>"+i+"<a id = 'Number2' > </a> <label>Название:</label>"+Name+",<a id = 'NameA'></a> <label id = 'TypeName'>"+Type+"</label>:"+TypeZ+",<a id = 'TypeA'></a> <label id = 'TypeName2'>"+Type2+"</label>:"+Type2Z+"<a id = 'TypeB'></a> </div>")
+                   }
+                    console.log(ArrayDiv)   ;     
+                    break;
+
+                }
+                
+                 return{
+                [Name]:Name,
+                [Type]:Type,
+                [TypeZ]:TypeZ,
+                [Type2]:Type2,
+                [Type2Z]:Type2Z,
+
+                    Inner(){
+                        NameA.innerHTML = Name;
+                        TypeA.innerHTML = TypeZ;
+                        TypeName.innerHTML = Type;           
+                        TypeB.innerHTML = Type2Z;
+                        TypeName2.innerHTML = Type2;  
+                        Number2.innerHTML = i;
+                        i++; 
+                        
+                    }
+                }
+                
+        }
+        function Print()
+        {
+            
+            var oblect = NameAbs();
+            oblect.Inner();
+
+        }             
+            
+        </script> 
+    </body>
+</html>
